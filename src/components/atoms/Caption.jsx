@@ -1,8 +1,8 @@
 
-function Caption({name,lastName}) {
+function Caption({msn}) {
 
     return (
-        <h1>Hola {name} {lastName}</h1>
+        <h1>{msn}</h1>
     )
 }
 
