@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "../components/atoms/Header";
 import StudentList from "../components/organism/StudentList";
 
@@ -29,6 +30,7 @@ function Landing() {
     <>
       <Header />
       <StudentList studentList={studentList} />
+      <Link to="/login">Iniciar sesión</Link>
     </>
   );
 }
