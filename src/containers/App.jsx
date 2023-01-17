@@ -4,6 +4,7 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
+import Flexbox from '../pages/Flexbox';
 
 function App() {
     return ( 
@@ -13,6 +14,7 @@ function App() {
                 <Route path="/login" element={<Login/>} />
                 <Route path="/register" element={<Register/>} />
                 <Route path="/home" element={<Home />} />
+                <Route path="/flexbox" element={<Flexbox />} />
                 <Route path="/*" element={<NotFound/>} />
             </Routes>
         </BrowserRouter>   
