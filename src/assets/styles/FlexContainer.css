@@ -1,4 +1,9 @@
 .flexbox-container {
     width: 100%;
+    height: 300px;
     border: 1px blue solid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
 }
