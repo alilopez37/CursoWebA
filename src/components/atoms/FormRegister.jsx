@@ -1,26 +1,42 @@
+import { useRef } from 'react';
 import {useNavigate} from 'react-router-dom';
 
 function FormRegister() {
     const navigate = useNavigate()
 
-    const clickHandler = (e)=>{
+    const name = useRef()
+    const username = useRef()
+    const password = useRef()
+
+    const form = useRef()
+
+    const handlerClick = (e)=>{
         e.preventDefault();
-        navigate("/home")
+        //navigate("/home")
+        const newForm = new FormData(form.current)
+        let newName = newForm.get('name')
+        alert(`Nombre: ${newForm.get('name')} \nUsername: ${newForm.get('username')}`)
     }
 
     return ( 
-        <form action="">
-            <label htmlFor="name">Nombre</label>
-            <input type="text" id="name" />
+        <form ref={form}>
+            <div>
+                <label htmlFor="name">Nombre</label>
+                <input type="text" id="name" name="name" />
+            </div>
 
-            <label>Usuario
-                <input type="text" />
-            </label>
+            <div>
+                <label>Usuario
+                    <input type="text" name="username"/>
+                </label>
+            </div>
 
-            <label>Password</label>
-            <input type="password" />
+            <div>
+                <label>Password</label>
+                <input type="password" ref={password} />
+            </div>
 
-            <button type="button" onClick={clickHandler}>Iniciar sesión</button>
+            <button type="button" onClick={handlerClick}>Iniciar sesión</button>
         </form>
      );
 }
