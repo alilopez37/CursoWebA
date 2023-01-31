@@ -5,6 +5,7 @@ import Register from '../pages/Register';
 import Home from '../pages/Home';
 import NotFound from '../pages/NotFound';
 import Flexbox from '../pages/Flexbox';
+import RickAndMorty from '../pages/RickAndMorty';
 
 function App() {
     return ( 
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/register" element={<Register/>} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/flexbox" element={<Flexbox />} />
+                <Route path="/rickandmorty" element={<RickAndMorty />} />
                 <Route path="/*" element={<NotFound/>} />
             </Routes>
         </BrowserRouter>   
