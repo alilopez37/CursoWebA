@@ -1,0 +1,14 @@
+.character-container_character {
+    width: 30%;
+    margin: 0 10px;
+}
+
+.character-container_character img {
+    border-radius: 50%;
+}
+
+.character-container_character span {
+    font-size: 15px;
+    color: grey;
+    text-align: center;
+}
