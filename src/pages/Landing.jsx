@@ -31,6 +31,7 @@ function Landing() {
       <Header />
       <StudentList studentList={studentList} />
       <Link to="/login">Iniciar sesión</Link>
+      <Link to="/rickandmorty">Rick and Morty</Link>
     </>
   );
 }

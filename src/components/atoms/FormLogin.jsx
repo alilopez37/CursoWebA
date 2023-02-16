@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../../context/UserContext";
 import Logo from "../../assets/react.svg";
 
+
 function FormLogin() {
+  const {isLoged, setIsLoged} = useContext(UserContext) 
   const [description, setDescription] = useState({
     username: "",
     password: "",
@@ -26,10 +29,12 @@ function FormLogin() {
     setError("Error en la validación del nombre");
     setDescription({ msn: "Hola", v: 1, alias: "By" });
     console.log(description);
+    setIsLoged(true)
   };
 
   return (
     <div>
+    
       <img src={Logo} alt="Logo de la empresa" />
       <form>
         <input
@@ -48,6 +53,7 @@ function FormLogin() {
           <label>{JSON.stringify(description)}</label>
         </div>
         <Link to="/register">Regístrate</Link>
+        <Link to="/rickandmorty">Rick And Morty</Link>
       </form>
     </div>
   );

@@ -33,6 +33,10 @@ function FormRegister() {
         fetch(endpoint, options) 
         .then(response => response.json())
         .then(data => {
+/*             if (data.status === true)
+                //redigiri a algun lugar
+                else
+                alert () */
             alert(JSON.stringify(data))
         })
     }
