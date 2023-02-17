@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import CharacterList from "../components/organism/CharacterList";
-function RickAndMorty({session}) {
+function RickAndMorty() {
     const [characters,setCharacters] = useState([])
     const handlerClick = (e) => {
         fetch('https://rickandmortyapi.com/api/character')
@@ -11,21 +11,13 @@ function RickAndMorty({session}) {
         })
     }
 
-    if (session)
-        return (
+    return (
             <>
                 <h2>Rick & Morty</h2>
                 <button onClick={handlerClick} >Mostrar personajes</button>
                 <CharacterList characters={characters}/>
             </>
-        );
-    else
-            return (
-                <>
-                    <h1>Lo lamento no estás logueado</h1>
-                    <Link to="/">Regresar</Link>
-                </>
-            )
+    )
 }
 
 export default RickAndMorty;

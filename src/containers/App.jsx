@@ -8,6 +8,7 @@ import NotFound from '../pages/NotFound';
 import Flexbox from '../pages/Flexbox';
 import RickAndMorty from '../pages/RickAndMorty';
 import UserContext from '../context/UserContext';
+import RouteProtected from './RouteProtected';
 
 function App() {
     const [isLoged, setIsLoged] = useState(false)
@@ -17,10 +18,14 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Landing/>} />
                     <Route path="/login" element={<Login/>} />
-                    <Route path="/register" element={<Register/>} />
                     <Route path="/home" element={<Home />} />
-                    <Route path="/flexbox" element={<Flexbox />} />
-                    <Route path="/rickandmorty" element={<RickAndMorty session={isLoged}/>} />
+
+                    <Route element={<RouteProtected session={isLoged}/>}>
+                        <Route path="/register" element={<Register/>} />
+                        <Route path="/flexbox" element={<Flexbox />} />
+                        <Route path="/rickandmorty" element={<RickAndMorty />}/>
+                    </Route>
+                    
                     <Route path="/*" element={<NotFound/>} />
                 </Routes>
             </UserContext.Provider>
